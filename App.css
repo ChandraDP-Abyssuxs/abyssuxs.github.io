@@ -1,0 +1,370 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Windows 95 Fonts */
+@import url('https://fonts.googleapis.com/css2?family=MS+Sans+Serif:wght@400;700&display=swap');
+
+@theme inline {
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0px;
+  --background: #008080; /* Windows 95 teal */
+  --foreground: #000000;
+  --card: #c0c0c0; /* Windows 95 gray */
+  --card-foreground: #000000;
+  --popover: #c0c0c0;
+  --popover-foreground: #000000;
+  --primary: #000080; /* Windows 95 blue */
+  --primary-foreground: #ffffff;
+  --secondary: #c0c0c0;
+  --secondary-foreground: #000000;
+  --muted: #808080;
+  --muted-foreground: #000000;
+  --accent: #008080;
+  --accent-foreground: #ffffff;
+  --destructive: #ff0000;
+  --border: #808080;
+  --input: #ffffff;
+  --ring: #000080;
+  --chart-1: #ff0000;
+  --chart-2: #00ff00;
+  --chart-3: #0000ff;
+  --chart-4: #ffff00;
+  --chart-5: #ff00ff;
+  --sidebar: #c0c0c0;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #000080;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #008080;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #808080;
+  --sidebar-ring: #000080;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+/* Windows 95 Specific Styles */
+.win95-window {
+  background: #c0c0c0;
+  border: 2px outset #c0c0c0;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+}
+
+.win95-titlebar {
+  background: linear-gradient(90deg, #000080 0%, #0000ff 100%);
+  color: white;
+  padding: 2px 4px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.win95-button {
+  background: #c0c0c0;
+  border: 2px outset #c0c0c0;
+  padding: 2px 8px;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  min-width: 75px;
+}
+
+.win95-button:hover {
+  background: #d4d0c8;
+}
+
+.win95-button:active {
+  border: 2px inset #c0c0c0;
+}
+
+.win95-desktop {
+  background: #008080;
+  min-height: 100vh;
+  font-family: 'MS Sans Serif', sans-serif;
+  position: relative;
+}
+
+.win95-taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: #c0c0c0;
+  border-top: 1px solid #dfdfdf;
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  z-index: 1000;
+}
+
+.win95-start-button {
+  background: #c0c0c0;
+  border: 2px outset #c0c0c0;
+  padding: 2px 8px;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.win95-start-button:active {
+  border: 2px inset #c0c0c0;
+}
+
+.win95-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px;
+  margin: 8px;
+}
+
+.win95-icon:hover {
+  background: rgba(0, 0, 128, 0.3);
+}
+
+.win95-icon img {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.win95-icon-label {
+  color: white;
+  font-size: 11px;
+  text-align: center;
+  margin-top: 2px;
+  text-shadow: 1px 1px 0px #000;
+}
+
+.win95-content {
+  padding: 8px;
+  background: #c0c0c0;
+}
+
+.win95-input {
+  border: 2px inset #c0c0c0;
+  padding: 2px 4px;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  background: white;
+}
+
+.win95-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #c0c0c0 #808080;
+}
+
+.win95-scrollbar::-webkit-scrollbar {
+  width: 16px;
+}
+
+.win95-scrollbar::-webkit-scrollbar-track {
+  background: #c0c0c0;
+  border: 1px inset #c0c0c0;
+}
+
+.win95-scrollbar::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 1px outset #c0c0c0;
+}
+
+.win95-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #d4d0c8;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'MS Sans Serif', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .win95-window {
+    width: 90vw !important;
+    max-width: 350px;
+    left: 5vw !important;
+    top: 10vh !important;
+  }
+
+  .win95-desktop {
+    padding-bottom: 40px;
+  }
+
+  .win95-taskbar {
+    height: 40px;
+    padding: 0 4px;
+  }
+
+  .win95-start-button {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .win95-icon {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+  }
+
+  .win95-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .win95-icon-label {
+    font-size: 10px;
+  }
+
+  .win95-content {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .win95-button {
+    font-size: 10px;
+    padding: 3px 6px;
+    min-width: 60px;
+  }
+
+  .win95-titlebar {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .win95-window {
+    width: 95vw !important;
+    left: 2.5vw !important;
+  }
+
+  .win95-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .win95-icon img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+  .win95-icon {
+    cursor: pointer;
+  }
+
+  .win95-button:hover {
+    background: #c0c0c0;
+  }
+
+  .win95-icon:hover {
+    background: rgba(0, 0, 128, 0.3);
+  }
+}
+
